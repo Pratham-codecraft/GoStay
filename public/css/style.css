@@ -1,0 +1,387 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+.fa-compass{
+    font-size: 2rem;
+    color: #fe424d;
+}
+.nav-link{
+    color:#222222 !important;
+}
+
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+.f-info-links,.f-info-brand{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials,.f-info-brand{
+    vertical-align: middle ;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    font-size: 1.2 rem;
+    margin:1rem;
+    justify-content: center;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-weight: 400 !important;
+    
+}
+.listing-link{
+    text-decoration: none !important;
+}
+.card-img-overlay{
+    opacity: 0 ;
+}
+.card-img-overlay :hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+.show-img{
+    height: 30vh !important;
+}
+.btns{
+    display: flex;
+    
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;;
+}
+#map { 
+    height: 400px;
+    width: 80vh;
+ }
+ 
+
+video.bg-video {
+  position: fixed; /* ensures it stays full screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops without distortion */
+  z-index: -10;
+}
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+} */
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+/* Remove the dark overlay so text is clear on video */
+.absolute.inset-0.bg-black.bg-opacity-50 {
+  background-color: transparent !important;
+}
+
+/* Center the content vertically & horizontally */
+.relative.z-10.flex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Make text black for visibility */
+.relative.z-10.flex h1,
+.relative.z-10.flex p {
+  color: black !important;
+  text-shadow: none;
+}
+
+/* Buttons */
+.bg-orange-500 {
+  background-color: #ff7f24 !important;
+  color: white;
+}
+
+.bg-orange-500:hover {
+  background-color: #ff6a00 !important;
+}
+
+.border-orange-500 {
+  border-color: #ff7f24 !important;
+  color: black !important;
+}
+
+.border-orange-500:hover {
+  background-color: #ff7f24 !important;
+  color: white !important;
+}
+/* Overlay on top of video */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* Adjust 0.45 for darkness */
+  z-index: -5; /* Sits above video but below content */
+}
+
+/* Make heading & text white with shadow */
+.relative.z-10.flex h1,
+.relative.z-10.flex p {
+  color: white !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.font-bold {
+    font-size: 3.75rem !important;
+  font-weight: 1000 !important;
+}
+@media (min-width: 768px) {
+    .md\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.max-w-xl {
+    max-width: 36rem;
+}
+
+.btn-orange {
+  background-color: rgb(230, 50, 60); /* original bg */
+  color: white;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-orange:hover, 
+.btn-orange:focus {
+  background-color: rgb(230, 50, 60); /* lighter on hover/focus */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  color: white;
+  transform: translateY(-2px);
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-orange:active {
+  background-color: rgb(230, 50, 60); /* darker on active */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transform: translateY(1px) scale(0.98);
+  outline: none;
+}
+
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange:focus-visible {
+  background-color: rgb(230, 50, 60) !important;
+  color: white !important;
+  outline: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transform: translateY(1px) scale(0.98);
+  text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(230, 50, 60) !important;
+}
+
+
+
+/* CHANGE */
+.search-btn {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 2rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.search-btn:hover {
+  background-color: #fe424d;
+  color: #fff;
+}
+.search-btn:active {
+  background-color: #fe424d !important;
+  color: #fff !important;
+}
+
+.search-btn i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.search-inp {
+  margin-left: 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  width: 15.5rem;
+}
+
+.offers {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.offers i {
+  font-size: 1.1rem;
+}
+
+.offers span {
+  font-size: 1.1rem;
+}
+
+#responsive-registration {
+  display: none;
+}
+
+.dropdown {
+  margin-left: auto !important;
+}
+
+.dropdown p {
+  display: inline;
+}
+
+.dropdown button {
+  width: auto !important;
+  height: 3rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu {
+  margin-top: 0.5rem !important;
+  width: 14rem;
+  padding: 0.7rem;
+  transform: translateX(-65%);
+}
+
+#web-title {
+  color: #fe424d !important;
+  font-size: 1.7rem;
+  margin-left: -0.5rem !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  font-family: "Kaushan Script", cursive;
+}
+
+.navbar-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-circle-user {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .dropdown {
+    display: none;
+  }
+
+  #web-title {
+    color: #fe424d !important;
+    font-size: 1.6rem !important;
+  }
+
+  .alert {
+    margin-top: 0.5rem !important;
+    font-size: 0.9rem;
+    padding: 0.6rem !important;
+  }
+
+  .btn-close {
+    padding: 0.9rem !important;
+  }
+
+  #responsive-registration {
+    display: inline;
+    margin: 1rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .nav-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: -0.5rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .container-fluid {
+    background-color: white;
+  }
+}
+/* CHANGE END */

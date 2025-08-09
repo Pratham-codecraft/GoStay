@@ -1,0 +1,138 @@
+<!-- CHANGE -->
+
+<% layout("/layouts/boilerplate") %>
+<div class="row"> 
+  <div class="col-8 offset-2">
+    <br><br>
+    <h3>Edit your Listing</h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label for="Title">Title</label>
+        <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required/>
+        <div class="invalid-feedback">Title Should Be valid</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description">Description</label>
+        <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+        <div class="invalid-feedback">Description Should Be there</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image">Original Image</label><br>
+        <img src="<%= originalImageUrl %>" alt="old img" style="border-radius: 1rem;">
+      </div>
+
+      <div class="mb-3">
+        <label for="image">Upload New Image</label>
+        <input name="listing[image]" type="file" class="form-control"/>
+      </div>
+
+      <!-- Category Section -->
+      <div class="mb-3">
+        <label for="category">Choose Category</label>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="trending" name="listing[category]" value="Trending" required <%= listing.category==='Trending' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="trending">
+                <i class="fa-solid fa-fire me-2"></i> Trending
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="rooms" name="listing[category]" value="Rooms" required <%= listing.category==='Rooms' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="rooms">
+                <i class="fa-solid fa-bed me-2"></i> Rooms
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="iconic-cities" name="listing[category]" value="Iconic Cities" required <%= listing.category==='Iconic Cities' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="iconic-cities">
+                <i class="fa-solid fa-mountain-city me-2"></i> Iconic Cities
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="mountains" name="listing[category]" value="Mountains" required <%= listing.category==='Mountains' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="mountains">
+                <i class="fa-solid fa-mountain me-2"></i> Mountains
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="castles" name="listing[category]" value="Castles" required <%= listing.category==='Castles' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="castles">
+                <i class="fa-brands fa-fort-awesome me-2"></i> Castles
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="amazing-pools" name="listing[category]" value="Amazing Pools" required <%= listing.category==='Amazing Pools' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="amazing-pools">
+                <i class="fa-solid fa-person-swimming me-2"></i> Amazing Pools
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="camping" name="listing[category]" value="Camping" required <%= listing.category==='Camping' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="camping">
+                <i class="fa-solid fa-campground me-2"></i> Camping
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="village" name="listing[category]" value="Village" required <%= listing.category==='Village' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="village">
+                <i class="fa-solid fa-cow me-2"></i> Village
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="igloo" name="listing[category]" value="Igloo" required <%= listing.category==='Igloo' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="igloo">
+                <i class="fa-solid fa-igloo me-2"></i> Igloo
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="domes" name="listing[category]" value="Domes" required <%= listing.category==='Domes' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="domes">
+                <i class="fa-solid fa-landmark-dome me-2"></i> Domes
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" id="house-boats" name="listing[category]" value="House Boats" required <%= listing.category==='House Boats' ? 'checked' : '' %>>
+              <label class="form-check-label d-flex align-items-center" for="house-boats">
+                <i class="fa-solid fa-sailboat me-2"></i> House Boats
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="invalid-feedback">Choose Category</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price">Price</label>
+          <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required/>
+          <div class="invalid-feedback">Price Should Be valid</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country">Country</label>
+          <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required/>
+          <div class="invalid-feedback">Country Should Be valid</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location">Location</label>
+        <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required/>
+        <div class="invalid-feedback">Location Should Be valid</div>
+      </div>
+
+      <br /><br />
+      <button class="btn btn-dark add-btn">Edit</button>
+      <br><br><br>
+    </form>
+  </div>
+</div>
+
+<!-- CHANGE END -->

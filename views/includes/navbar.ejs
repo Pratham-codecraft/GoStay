@@ -1,0 +1,77 @@
+<!-- change -->
+<style>
+  .btn-search{
+    background-color: #fe424d;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color: white;
+  }
+  .btn-search i{
+    display: inline;
+    margin-right: 0.3rem;
+  }
+  .search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 2.3rem 0.5rem 3rem;
+    /* font-size: 0.95rem; */
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <div class="navbar-nav web-title">
+      <a class="nav-link" id="web-title" href="/listings"><b>GoStay</b></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search" action="/listings/search" method="get" id="searchBox">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" aria-label="Search" name="q" id="mySearchInput"/>
+          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+
+      <div class="navbar-nav">
+        <div class="dropdown">
+          <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;&nbsp;
+          </button>
+          <ul class="dropdown-menu">
+            <% if(!currUser) { %>
+              <a class="nav-link" href="/users/signup"><i class="fa-solid fa-user-plus"></i>&nbsp; &nbsp;<b>Sign up</b></a>
+              <a class="nav-link" href="/users/login"><b><i class="fa-solid fa-user-check"></i>&nbsp; &nbsp;Log in</b></a>
+            <% } %>
+            <% if(currUser) { %>
+              <h6 class="mt-1 nav-link"><b><i class="fa-solid fa-user"></i>&nbsp; &nbsp;<%= currUser.username %></b></h6>
+              <a class="nav-link" href="/users/logout"><b><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp; &nbsp;Log out</b></a>
+            <% } %>
+            <hr />
+            <a class="nav-link" href="/listings/new"><strong><i class="fa-solid fa-circle-plus"></i>&nbsp; &nbsp;GoStay your home</strong></a>
+          </ul>
+        </div>
+
+        <div id="responsive-registration">
+          <% if(!currUser) { %>
+            <a class="nav-link" href="/users/signup"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;<b>Sign up</b></a>
+            <a class="nav-link" href="/users/login"><i class="fa-solid fa-user-check"></i>&nbsp;&nbsp;<b>Log in</b></a>
+          <% } %>
+          <% if(currUser) { %>
+            <h6 class="mt-1 nav-link"><b><i class="fa-solid fa-user"></i>&nbsp; &nbsp;<%= currUser.username %></b></h6>
+            <a class="nav-link" href="/users/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;<b>Log out</b></a>
+          <% } %>
+          <a class="nav-link" href="/listings/new"><i class="fa-solid fa-circle-plus"></i>&nbsp; &nbsp;<strong>GoStay your home</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- change end -->

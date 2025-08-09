@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoStay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline
+    class="bg-video"
+    src="/travel.mp4"
+  ></video>
+
+  <!-- Overlay (now transparent in CSS) -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+  <div class="video-overlay"></div>
+
+  <!-- Centered Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
+    <% if (success && success.length > 0) { %>
+      <div id="flashji" class="alert alert-success">
+        ✅ <%= success[0] %>
+      </div>
+    <% } %>
+
+    <% if (error && error.length > 0) { %>
+      <div class="alert alert-danger">
+        ❌ <%= error[0] %>
+      </div>
+    <% } %>
+
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+      Welcome to GoStay
+    </h1>
+
+    <p class="text-xl md:text-2xl max-w-xl drop-shadow-md">
+      Explore the world’s best travel listings with comfort and style.
+    </p>
+
+    <div class="mt-8">
+      <a href="/listings" class="btn btn-orange px-4 py-2 fw-semibold shadow-sm">
+  Get Started
+</a>
+
+
+    </div>
+  </div>
+
+  <script>
+    const flash = document.getElementById("flashji");
+    setTimeout(() => {
+      if (flash) flash.style.display = 'none';
+    }, 3000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
